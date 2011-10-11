@@ -1,8 +1,7 @@
 <%= div_for patient do %>
   <span class="dateandoptions">
     Posted <%=time_ago_in_words(patient.created_at)%> ago<br />
-		<%= link_to 'Destroy', patient, :confirm => 'Are you sure?', :method => :delete, :remote=>true, :class=>'delete' %>
-    
+		<%= button_to "Destroy", patient, :method=>:delete, :class=>:destroy, :confirm=>"Are you sure?", :remote => true %>
   </span>
 	<p><b><%= patient.numberOfTag %></b> wrote:</p>
 	<br />

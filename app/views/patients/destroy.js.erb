@@ -2,3 +2,7 @@
 $('#patient_<%= @patient.id %>').fadeOut();
 /* Replace the count of comments */
 $("#patient_count").html("<%= pluralize(Patient.count, 'Patient') %>");
+
+$('.delete_patient').bind('ajax:success', function() {  
+    $(this).closest('tr').fadeOut();  
+});
