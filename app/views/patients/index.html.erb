@@ -1,0 +1,22 @@
+<span id="patients_count"><%= pluralize(@patients.count, "Patient")%></span>
+<div id="patients">
+	<%= render :partial => @patients, :locals => {:list => true} %>
+</div>
+
+<hr />
+
+<div id="patient-notice"></div>
+
+
+
+<% form_for Patient.new, :remote => true do |patient| %>
+	<%= patient.label :numberOfTag, "Tag" %><br />
+	<%= patient.text_field :numberOfTag %><br />
+	<%= patient.label :color, "Color" %><br />
+	<%= patient.text_field :color %><br />
+	<%= patient.label :age, "Age"%><br />
+	<%= patient.text_field :age %><br />
+	<%= patient.label :ageType, "Y/M/D" %><br />
+	<%= patient.text_field :ageType %><br />
+	<%= patient.submit "Add"%>
+<% end %> 

@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  numberOfTag: 
+  color: MyString
+  age: 
+  ageType: MyString
+  complaint: MyText
+  status: MyString
+  ambulance: MyString
+  destination: MyString
+
+two:
+  numberOfTag: 
+  color: MyString
+  age: 
+  ageType: MyString
+  complaint: MyText
+  status: MyString
+  ambulance: MyString
+  destination: MyString

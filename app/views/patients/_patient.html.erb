@@ -1,0 +1,10 @@
+<%= div_for patient do %>
+  <span class="dateandoptions">
+    Posted <%=time_ago_in_words(patient.created_at)%> ago<br />
+		<%= link_to 'Destroy', patient, :confirm => 'Are you sure?', :method => :delete, :remote=>true, :class=>'delete' %>
+    
+  </span>
+	<p><b><%= patient.numberOfTag %></b> wrote:</p>
+	<br />
+  <%= content_tag(:p, patient.color, :class => "patient-body") %>
+<% end %>

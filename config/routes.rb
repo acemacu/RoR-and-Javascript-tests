@@ -1,4 +1,7 @@
 JavascriptTest::Application.routes.draw do
+  resources :patients
+  root :to => "patients#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

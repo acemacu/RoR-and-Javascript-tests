@@ -1,0 +1,4 @@
+/* Eliminate the comment by fading it out */
+$('#patient_<%= @patient.id %>').fadeOut();
+/* Replace the count of comments */
+$("#patient_count").html("<%= pluralize(Patient.count, 'Patient') %>");
