@@ -1,4 +1,6 @@
 class PatientsController < ApplicationController
+  
+  
   # GET /patients
   # GET /patients.xml
   def index
@@ -51,14 +53,15 @@ class PatientsController < ApplicationController
   # PUT /patients/1.xml
   def update
     @patient = Patient.find(params[:id])
-
+    
+    
     respond_to do |format|
       if @patient.update_attributes(params[:patient])
         format.html { redirect_to(@patient, :notice => 'Patient was successfully updated.') }
-        format.xml  { head :ok }
+        format.json  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @patient.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @patient.errors, :status => :unprocessable_entity }
       end
     end
   end
