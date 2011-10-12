@@ -1,9 +1,11 @@
 <%= div_for patient do %>
-  <span class="dateandoptions">
-    Posted <%=time_ago_in_words(patient.created_at)%> ago<br />
-		<%= button_to "Destroy", patient, :method=>:delete, :class=>:destroy, :confirm=>"Are you sure?", :remote => true %>
-  </span>
-	<p><b><%= patient.numberOfTag %></b> wrote:</p>
-	<br />
-  <%= content_tag(:p, patient.color, :class => "patient-body") %>
+    <tr>
+		<td><%= patient.numberOfTag %></td>
+		<td><%= patient.color %></td>
+		<td><%= patient.sex %></td>
+		<td><%= patient.age %></td>
+		<td><%= patient.ageType %></td>
+		<td><%= patient.complaint %></td>
+		<td><%= button_to "X", patient, :method=>:delete, :class=>:destroy, :confirm=>"Are you sure?", :remote => true %></td>
+  
 <% end %>
