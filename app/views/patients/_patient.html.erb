@@ -1,11 +1,11 @@
 <%= div_for patient do %>
     <tr>
 		<td><%= editable_field patient, :numberOfTag %></td>
-		<td><%= patient.color %></td>
-		<td><%= patient.sex %></td>
-		<td><%= patient.age %></td>
-		<td><%= patient.ageType %></td>
-		<td><%= patient.complaint %></td>
+		<td><%= editable_field patient, :color, :type => 'select', :data => {'Green', 'Green', 'Black', 'Black', 'Yellow', 'Yellow', 'Red', 'Red'}, :submit => 'OK' %></td>
+		<td><%= editable_field patient, :sex, :type => 'select', :data => {'Female', 'Female', 'Male', 'Male'}, :submit => 'OK'%></td>
+		<td><%= editable_field patient, :age %></td>
+		<td><%= editable_field patient, :ageType, :type => 'select', :data => {'Years', 'Years', 'Months', 'Months', 'Days', 'Days'}, :submit => 'OK' %></td>
+		<td><%= editable_field patient, :complaint %></td>
 		<td><%= button_to "X", patient, :method=>:delete, :class=>:destroy, :confirm=>"Are you sure?", :remote => true %></td>
   
 <% end %>

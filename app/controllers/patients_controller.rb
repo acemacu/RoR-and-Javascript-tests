@@ -54,11 +54,28 @@ class PatientsController < ApplicationController
   def update
     @patient = Patient.find(params[:id])
     
-    
     respond_to do |format|
       if @patient.update_attributes(params[:patient])
-        format.html { redirect_to(@patient, :notice => 'Patient was successfully updated.') }
-        format.json  { head :ok }
+        flash[:notice] = "Patient successfully updated."
+        if params[:patient][:numberOfTag]
+          format.html {  render :text => params[:patient][:numberOfTag] }
+          format.json  { head :ok }
+        elsif params[:patient][:color]
+          format.html {  render :text => params[:patient][:color] }
+          format.json  { head :ok }
+        elsif params[:patient][:sex]
+          format.html {  render :text => params[:patient][:sex] }
+          format.json  { head :ok } 
+        elsif params[:patient][:age]
+         format.html {  render :text => params[:patient][:age] }
+          format.json  { head :ok }
+        elsif params[:patient][:ageType]
+          format.html {  render :text => params[:patient][:ageType] }
+          format.json  { head :ok }
+        else params[:patient][:complaint]
+          format.html {  render :text => params[:patient][:complaint] }
+          format.json  { head :ok }      
+        end
       else
         format.html { render :action => "edit" }
         format.json  { render :json => @patient.errors, :status => :unprocessable_entity }
